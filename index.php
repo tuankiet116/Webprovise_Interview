@@ -45,11 +45,7 @@ class Company
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://5f27781bf5d27e001612e057.mockapi.io/webprovise/companies");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        // $this->companies = array_map(function($company) {
-        //     return $company->id => $company;
-        // },json_decode(curl_exec($ch)));
         $this->companies = json_decode(curl_exec($ch));
-        // var_dump($this->companies);
         curl_close($ch);
     }
 
